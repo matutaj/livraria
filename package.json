@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "scripts":{
+  "scripts": {
     "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
   },
   "devDependencies": {
@@ -13,6 +13,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "@prisma/client": "^5.14.0",
     "prisma": "^5.14.0"
   }
 }
