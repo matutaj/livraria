@@ -8,7 +8,7 @@ export interface ILivroData{
     preco:number,
     quantidade:number,
     descricao?:string,
-    categoriaId:string
+    //categoriaId:string
 
 }
 export interface Ilivro{
@@ -16,7 +16,7 @@ export interface Ilivro{
     listarTodoLivro():Promise<Livro []>
     listarLivroPeloNome(nome:string):Promise<Livro |undefined>
     listarLivroPeloId(id:string):Promise< Livro | undefined>
-    listarPorCategoria(categoriaId:string):Promise<Livro []>
+   // listarPorCategoria(categoriaId:string):Promise<Livro []>
     eliminarLivro(id:string):Promise<void>
     atualizar({}:ILivroData):Promise<Livro>
 }

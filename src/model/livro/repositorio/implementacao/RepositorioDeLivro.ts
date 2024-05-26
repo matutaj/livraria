@@ -5,9 +5,9 @@ import { Livro } from "@prisma/client";
 
 
 class RepositorioDeLivro implements Ilivro{
-    async criar({nome,autor,categoriaId,dataLancamento,preco,quantidade,descricao }: ILivroData): Promise<Livro> {
+    async criar({nome,autor,dataLancamento,preco,quantidade,descricao }: ILivroData): Promise<Livro> {
         const cadastrarLivro = await prisma.livro.create({data:{
-            nome,autor,categoriaId,dataLancamento,preco,quantidade,descricao
+            nome,autor,dataLancamento,preco,quantidade,descricao
         }})
         return cadastrarLivro;
     }
@@ -22,10 +22,7 @@ class RepositorioDeLivro implements Ilivro{
         const listarPorNome = await prisma.livro.findFirst({where:{nome}}) || undefined;
         return listarPorNome;
     }
-     async listarPorCategoria(categoriaId: string): Promise<Livro []> {
-        const listarPorCategoriaId = await prisma.livro.findMany({where:{categoriaId}})
-        return listarPorCategoriaId;
-    }
+
      async listarTodoLivro(): Promise<Livro[]> {
         const listarTodo = await prisma.livro.findMany()
         return listarTodo;
@@ -34,9 +31,9 @@ class RepositorioDeLivro implements Ilivro{
      async eliminarLivro(id: string): Promise<void> {
          await prisma.livro.delete({where:{id}})   
     }
-     async atualizar({ id,  nome,autor,categoriaId,dataLancamento,preco,quantidade,descricao}: ILivroData): Promise<Livro> {
+     async atualizar({ id,  nome,autor,dataLancamento,preco,quantidade,descricao}: ILivroData): Promise<Livro> {
         const atualizar = await prisma.livro.update({where:{id}, data:{
-            nome,autor,categoriaId,dataLancamento,preco,quantidade,descricao
+            nome,autor,dataLancamento,preco,quantidade,descricao
         }})
         return atualizar
     }

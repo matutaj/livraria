@@ -11,7 +11,6 @@ class DeleteGradeController {
         await useCaselivro.execute(id)
 
         return res.status(200).json("eliminado")
-
     }
 }
 export { DeleteGradeController }
