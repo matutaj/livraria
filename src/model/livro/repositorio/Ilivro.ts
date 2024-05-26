@@ -16,7 +16,7 @@ export interface Ilivro{
     listarTodoLivro():Promise<Livro []>
     listarLivroPeloNome(nome:string):Promise<Livro |undefined>
     listarLivroPeloId(id:string):Promise< Livro | undefined>
-    listarPorCategoria(categoriaId:string):Promise<Categoria | undefined>
+    listarPorCategoria(categoriaId:string):Promise<Livro []>
     eliminarLivro(id:string):Promise<void>
     atualizar({}:ILivroData):Promise<Livro>
 }
