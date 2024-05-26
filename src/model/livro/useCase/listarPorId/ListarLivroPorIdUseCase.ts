@@ -1,6 +1,6 @@
 import { Livro } from "@prisma/client";
-import { RepositorioDeLivro } from "../repositorio/implementacao/RepositorioDeLivro";
-import { AppError } from "../../../errors/AppError";
+import { RepositorioDeLivro } from "../../repositorio/implementacao/RepositorioDeLivro";
+import { AppError } from "../../../../errors/AppError";
 
 
 class ListarLivroPorIdUseCase{

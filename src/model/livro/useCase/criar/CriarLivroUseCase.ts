@@ -1,7 +1,7 @@
-import { AppError } from "../../../errors/AppError";
-import { ILivroData } from "../repositorio/Ilivro";
+import { AppError } from "../../../../errors/AppError";
+import { ILivroData } from "../../repositorio/Ilivro";
 import { Livro } from "@prisma/client";
-import { RepositorioDeLivro } from "../repositorio/implementacao/RepositorioDeLivro";
+import { RepositorioDeLivro } from "../../repositorio/implementacao/RepositorioDeLivro";
 
 class CriarLivroUseCase{
  async execute({autor,categoriaId,dataLancamento,nome,preco,quantidade,descricao}:ILivroData):Promise<Livro>{
